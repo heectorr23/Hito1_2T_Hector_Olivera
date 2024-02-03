@@ -1,0 +1,16 @@
+-- formulario que nos pida, email del autor, título, contenido, fecha de publicación e
+imagen. La imagen puede ser considerada para almacenar en la base de datos como texto o como objeto.
+-- un botón para guardar el post.
+-- un botón para cerrar sesión.
+-- un listado de los posts publicados, mostrando el título, la fecha de publicación y el autor.
+-- un botón para eliminar un post.
+-- un botón para editar un post.
+-- un botón para ver el detalle de un post.
+-- un botón para volver a la página de inicio.
+
+-- En el formulario quitar la fecha de publicaion y ponerla en la db
+-- fecha es datetime
+-- la imagen tiene que ser un link para mostrarla en el listado de posts
+
+
+--Problemas para insertar los datos del blog en la base de datos
