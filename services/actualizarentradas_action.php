@@ -39,9 +39,11 @@ function actualizar_entrada($conexion, $id_entrada, $titulo, $contenido) {
         $stmt->bindParam(':id_entrada', $id_entrada, PDO::PARAM_INT);
 
         // Ejecutar la consulta
-        $stmt->execute();
-
-        return true; // Éxito al actualizar
+        if ($stmt->execute()) {
+            return true; // Éxito al actualizar
+        } else {
+            return false; // Error al actualizar
+        }
     } catch (PDOException $e) {
         // Manejar errores
         return false; // Error al actualizar

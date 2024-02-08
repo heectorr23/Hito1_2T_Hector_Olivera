@@ -8,14 +8,37 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body class="container mt-5">
-
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../web/index.php">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../web/login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../web/register.php">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../web/entradas.php">Entradas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../web/blog.php">Blog</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 <h1 class="mb-4">Todas las Entradas del Blog</h1>
-<a class="nav-link" href="../web/actualizar_entradas.php">Actualizar Entradas <span class="sr-only">(current)</span></a>
 <?php
 include_once '../services/entradas_action.php';
 $entradas_blog = obtener_entradas();
 foreach ($entradas_blog as $entrada) :
-    ?>
+?>
     <div class="card mb-3">
         <div class="card-header">
             <h5 class="card-title"><?= $entrada['titulo'] ?></h5>
@@ -26,6 +49,8 @@ foreach ($entradas_blog as $entrada) :
             <?php if (!empty($entrada['imagen'])) : ?>
                 <img src="<?= $entrada['imagen'] ?>" class="img-fluid" alt="Imagen del Blog">
             <?php endif; ?>
+            <!-- Agregar enlace de edición -->
+            <a href="../web/actualizar_entradas.php?id=<?= $entrada['id_blog'] ?>" class="btn btn-primary">Editar</a>
         </div>
     </div>
 <?php endforeach;?>

@@ -14,3 +14,5 @@ create table blog(
                      `usuario_id` int NOT NULL,
                      FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 )
+
+select * from usuarios;

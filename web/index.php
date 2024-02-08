@@ -36,9 +36,7 @@ setcookie('info_acceso', "IP: $ip - Fecha: $fecha_acceso", time() + 3600); // La
             <li class="nav-item">
                 <a class="nav-link" href="../web/register.php">Registrarse</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../web/entradas.php">Entradas</a>
-            </li>
+
         </ul>
     </div>
 </nav>

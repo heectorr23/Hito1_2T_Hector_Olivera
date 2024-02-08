@@ -9,9 +9,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<?php
-echo '<h2> Registro de Usuarios<h2>'
-?>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../web/index.php">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../web/login.php">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../web/register.php">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../web/entradas.php">Entradas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+<h2 class="mb-4">Registro de Usuarios</h2>
 <div class="container mt-5">
     <form method="post" action="../services/register_action.php">
 
