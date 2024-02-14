@@ -1,4 +1,15 @@
 <?php
+// Inicia la sesión
+session_start();
+// Verifica si el usuario ha iniciado sesión
+if (!isset($_SESSION['usuario'])) {
+    // Si no ha iniciado sesión, redirige al usuario a la página de inicio de sesión
+    echo "<p>No has iniciado sesión</p>";
+    exit;
+}
+// Obtiene el correo electrónico del usuario actual
+$email_usuario_actual = $_SESSION['usuario'];
+
 // Verifica si se ha enviado un ID de entrada válido
 if (isset($_GET['id'])) {
 // Incluye el archivo de funciones para obtener entradas
@@ -7,6 +18,12 @@ include_once '../services/entradas_action.php';
 $id_entrada = $_GET['id'];
 // Obtiene la entrada del blog con el ID proporcionado
 $entrada = obtener_entrada_por_id($id_entrada);
+
+// Verifica si el usuario actual es el autor de la entrada
+if ($entrada['email_autor'] !== $email_usuario_actual) {
+    echo "<p>No tienes los suficientes permisos para editar esta entradas</p>";
+    exit;
+}
 
 // Verifica si se encontró la entrada
 if ($entrada) {
@@ -35,7 +52,6 @@ if ($entrada) {
         <label for="contenido">Contenido:</label>
         <textarea class="form-control" name="contenido" required><?= $entrada['contenido'] ?></textarea>
     </div>
-    <!-- Puedes agregar más campos según tu estructura de base de datos -->
     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
 </form>
 <!-- Agregar el script de Bootstrap JS (opcional) -->

@@ -10,7 +10,7 @@
 </head>
 <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Logo</a>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,7 +26,7 @@
                         <a class="nav-link" href="../web/register.php">Registrarse</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../web/entradas.php">Entradas</a>
+
                     </li>
                 </ul>
             </div>

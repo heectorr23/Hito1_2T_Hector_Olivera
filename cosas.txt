@@ -14,3 +14,4 @@ imagen. La imagen puede ser considerada para almacenar en la base de datos como 
 
 
 --Problemas para insertar los datos del blog en la base de datos
+--Problemas para realizar la verificacion del usuario a la hora de editar o eliminar un post
