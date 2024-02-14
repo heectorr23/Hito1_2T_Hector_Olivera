@@ -15,8 +15,15 @@ $consulta_correo_existente = $conexion->prepare("SELECT COUNT(*) FROM usuarios W
 $consulta_correo_existente->bindParam(':correo', $correo);
 $consulta_correo_existente->execute();
 
+// Verificar si el nombre ya existe
+$consulta_nombre_existente = $conexion->prepare("SELECT COUNT(*) FROM usuarios WHERE nombre = :nombre");
+$consulta_nombre_existente->bindParam(':nombre', $nombre);
+$consulta_nombre_existente->execute();
+
 if ($consulta_correo_existente->fetchColumn() > 0) {
     echo "Error: El correo electrónico ya está registrado.";
+} elseif ($consulta_nombre_existente->fetchColumn() > 0) {
+    echo "Error: El nombre de usuario ya está registrado.";
 } else {
     // El correo no existe, proceder con la inserción
     $sql = "INSERT INTO usuarios (nombre, email, contrasena) VALUES (:nombre, :correo, :password)";
