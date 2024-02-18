@@ -40,6 +40,7 @@ setcookie('info_acceso', "IP: $ip - Fecha: $fecha_acceso", time() + 3600); // La
         </ul>
     </div>
 </nav>
+<!-- Contenido principal -->
 
 <div class="container">
     <h3 class="text-center">Diferencias entre lenguajes de programación</h3>
